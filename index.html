@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Genera contraseñas seguras y personalizadas en tu navegador. Sin registros, sin servidores y sin guardar tus contraseñas.">
+  <meta name="color-scheme" content="dark">
+  <title>Generador de Contraseñas Seguras</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./index.html" aria-label="Clave, inicio"><span class="brand-icon" aria-hidden="true">▦</span> clave<span class="brand-dot">.</span></a>
+    <span class="local-badge"><span class="status-dot" aria-hidden="true"></span> 100% en tu navegador</span>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <div class="eyebrow"><span aria-hidden="true">✳</span> TU SEGURIDAD EMPIEZA AQUÍ</div>
+      <h1 id="page-title">Generador de<br><span>Contraseñas Seguras</span></h1>
+      <p>Una buena contraseña hace la diferencia.<br>Crea una clave única, aleatoria y solo tuya.</p>
+    </section>
+
+    <section class="generator" aria-label="Configura y genera tu contraseña">
+      <div class="result-panel">
+        <div class="panel-heading"><label for="password">TU NUEVA CONTRASEÑA</label><svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></svg></div>
+        <input id="password" class="password" type="text" readonly spellcheck="false" autocomplete="off" aria-describedby="strength-note">
+        <div class="strength-heading"><span>Seguridad de la contraseña</span><strong id="strength-label">—</strong></div>
+        <div id="strength-meter" class="strength-track" role="meter" aria-label="Nivel estimado de seguridad" aria-valuemin="0" aria-valuemax="4" aria-valuenow="0"><div id="strength-bar"></div></div>
+        <p id="strength-note" class="strength-note">La seguridad es una estimación según longitud y variedad.</p>
+      </div>
+
+      <form id="generator-form" class="settings">
+        <div class="section-heading"><h2>Personaliza tu contraseña</h2><span class="step-label">A TU MEDIDA</span></div>
+        <div class="length-heading"><label for="length">Longitud de la contraseña</label><output id="length-value" for="length">12</output></div>
+        <input id="length" type="range" min="6" max="32" value="12">
+        <div class="range-labels" aria-hidden="true"><span>6 caracteres</span><span>32 caracteres</span></div>
+
+        <fieldset>
+          <legend>Caracteres incluidos</legend>
+          <div class="option-grid">
+            <label class="option"><input id="uppercase" type="checkbox" checked><span>Mayúsculas</span><span class="sample" aria-hidden="true">A–Z</span></label>
+            <label class="option"><input id="lowercase" type="checkbox" checked><span>Minúsculas</span><span class="sample" aria-hidden="true">a–z</span></label>
+            <label class="option"><input id="numbers" type="checkbox" checked><span>Números</span><span class="sample" aria-hidden="true">0–9</span></label>
+            <label class="option"><input id="symbols" type="checkbox" checked><span>Símbolos</span><span class="sample" aria-hidden="true">!@#</span></label>
+          </div>
+        </fieldset>
+        <div class="actions">
+          <button class="button primary" type="submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M6.1 7a7 7 0 0 1 11.8-1L20 9M4 15l2.1 3A7 7 0 0 0 17.9 17"/></svg>Generar contraseña</button>
+          <button id="copy-button" class="button secondary" type="button" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M15 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>Copiar contraseña</button>
+        </div>
+        <p id="message" class="message" role="status" aria-live="polite" aria-atomic="true"></p>
+      </form>
+    </section>
+
+    <aside class="privacy-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z"/><path d="m8 12 3 3 5-6"/></svg><p><strong>Tu privacidad, por diseño.</strong> Las contraseñas se generan en tu dispositivo.<br>No las guardamos ni las enviamos a ningún servidor.</p></aside>
+    <div class="tips" aria-label="Consejos de seguridad"><span><span aria-hidden="true">↗</span> Una clave por cuenta</span><span><span aria-hidden="true">＋</span> Más longitud, más protección</span><span><span aria-hidden="true">✓</span> Activa la verificación en dos pasos</span></div>
+  </main>
+  <footer><span>clave. <span class="footer-divider">/</span> Pequeños hábitos. Más seguridad.</span><span>Sin registros. Sin complicaciones.</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
